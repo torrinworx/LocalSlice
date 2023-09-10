@@ -17,8 +17,9 @@
     "react-scripts": "^5.0.1"
   },
   "scripts": {
+    "install-all": "pipenv install && npm install",
     "start": "concurrently \"npm run server\" \"npm run start-react\"",
-    "electron-start": "electron electron/main.js",
+    "start-electron": "concurrently \"electron electron/main.js\" \"npm run start-react\"",
     "start-react": "cross-env BROWSER=none react-scripts start",
     "server": "uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload",
     "build": "react-scripts build",

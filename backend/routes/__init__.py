@@ -4,7 +4,7 @@ from fastapi import APIRouter
 
 router = APIRouter()
 
-# Add all endpoint routers in the current API endpoints directory
+# Add all routes to APIRouter
 current_folder = os.path.dirname(os.path.abspath(__file__))
 
 for filename in os.listdir(current_folder):
