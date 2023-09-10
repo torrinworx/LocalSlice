@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+python-dotenv = "*"
+langchain = {extras = ["llms"] }
+python-multipart = "*"
+chromadb = "*"
+pypdf = "*"
+requests = "*"
+motor = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
