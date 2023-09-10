@@ -1,10 +1,10 @@
-# LocalSlice: Your Slice of AI, Right on Your Desktop
+# LocalSlice🍕: Your Slice of AI, Right on Your Desktop
 
 ## Description
 
-LocalSlice is designed as a user-focused LLM interface that requires zero technical background. Unlike many AI projects that are either too complex, lack features, or rely on third-party APIs, LocalSlice focuses on running everything locally on your machine, making it as intuitive as possible.
+LocalSlice🍕 is designed as a user-focused LLM interface that requires zero technical background. Unlike many AI projects that are either too complex, lack features, or rely on third-party APIs, LocalSlice🍕 focuses on running everything locally on your machine, making it as intuitive as possible.
 
-### Why Choose LocalSlice?
+### Why Choose LocalSlice🍕?
 
 - **Personalized AI**: Get a customized 'slice' of AI that's tailored to meet your individual needs.
 - **User-Friendly**: Designed with the everyday user in mind, not just tech experts.
@@ -15,13 +15,13 @@ LocalSlice is designed as a user-focused LLM interface that requires zero techni
 
 Our aim is not to fragment the user experience by creating multiple chat bots or specialized interfaces for different tasks. Instead, we want to centralize the best and most useful features currently scattered across various GitHub repositories, websites, and other platforms. Our goal is to bring all these functionalities together in a unified, single interface that is not only simple but also intuitive to use. By doing so, we aspire to simplify the user experience while offering a comprehensive suite of features.
 
-In a nutshell, LocalSlice prioritizes local processing and user privacy, making AI accessible and safe for everyone.
+In a nutshell, LocalSlice🍕 prioritizes local processing and user privacy, making AI accessible and safe for everyone.
 
 
 ## Table of Contents
 
 - [Description](#description)
-  - [Why Choose LocalSlice?](#why-choose-localslice)
+  - [Why Choose LocalSlice🍕?](#why-choose-localslice)
   - [Our Vision](#our-vision)
 - [Key Features](#key-features)
   - [Intuitive User Experience](#intuitive-user-experience)
@@ -64,11 +64,11 @@ In a nutshell, LocalSlice prioritizes local processing and user privacy, making 
 
 ## Roadmap Checklist
 
-This checklist outlines the key features and goals we plan to achieve for LocalSlice. 
+This checklist outlines the key features and goals we plan to achieve for LocalSlice🍕. 
 
 ## Roadmap
 
-Our roadmap outlines the key features and improvements we aim to achieve, to make LocalSlice increasingly powerful, user-friendly, and privacy-focused.
+Our roadmap outlines the key features and improvements we aim to achieve, to make LocalSlice🍕 increasingly powerful, user-friendly, and privacy-focused.
 
 ### 🟢 Short-Term Goals
 - [ ] **Electron Releases for Windows, Mac, Linux**: Standalone desktop apps for multiple OS.
@@ -92,7 +92,7 @@ This roadmap will continue to evolve based on community feedback and ongoing dev
 
 ## Development
 
-To set up a development environment for LocalSlice, you'll need to know the basics of React, Material UI, Electron, and FastAPI.
+To set up a development environment for LocalSlice🍕, you'll need to know the basics of React, Material UI, Electron, and FastAPI.
 
 ### Installation and Setup
 
