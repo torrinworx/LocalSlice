@@ -1,4 +1,7 @@
 # LocalSlice🍕: Your Slice of AI, Right on Your Desktop
+![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg) ![Contributors](https://img.shields.io/github/contributors/torrinworx/LocalSlice)
+
+
 
 ## Description
 
@@ -98,3 +101,5 @@ To set up a development environment for LocalSlice🍕, you'll need to know the 
 
 The application can be containerized using `Development.Dockerfile`. To test Electron functionality, run `npm run start-electron` while the FastAPI backend is running in a Docker container. Make sure port 8000 is mapped to your host machine.
 
+
+[![Star History Chart](https://api.star-history.com/svg?repos=torrinworx/LocalSlice&type=Date)](https://star-history.com/#torrinworx/LocalSlice&Date)
