@@ -79,16 +79,16 @@ Our roadmap outlines the key features and improvements we aim to achieve, to mak
 - [ ] **Full WebApp Implementation**: Deployable web server for self-hosting capabilities.
 
 ### 🟡 Mid-Term Goals
+- [ ] **Research Assistant**: Search the web and provide up-to-date, relevant information.
+- [ ] **Vectorize Folders**: Understand the contents of folders for advanced search and analysis.
 - [ ] **Voice Command Integration**: Add voice controls for hands-free operation.
 - [ ] **Customizable UI Themes**: Personalize the app's appearance.
 - [ ] **Integrate Third-Party Model Hosting Services**: Option to integrate with services like OpenAI.
 - [ ] **Auto Profile Adaptation**: Adapt to your needs through interactive questions.
 
 ### 🔵 Long-Term Goals
-- [ ] **Research Assistant**: Search the web and provide up-to-date, relevant information.
 - [ ] **Vectorized Chat History**: Queryable database for past interactions.
 - [ ] **Command Line Help**: Assist with command line tasks at the system level.
-- [ ] **Vectorize Folders**: Understand the contents of folders for advanced search and analysis.
 - [ ] **Model Management System**: Manage various open-source models locally.
 
 This roadmap will continue to evolve based on community feedback and ongoing development.
