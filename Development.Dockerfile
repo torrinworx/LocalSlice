@@ -12,7 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Update packages and install necessary tools
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y curl build-essential python3-dev gcc libgl1-mesa-glx python3-pip
+    apt-get install -y curl build-essential python3-dev gcc libgl1-mesa-glx python3-pip git
 
 # Set working dir
 WORKDIR /LocalSlice
