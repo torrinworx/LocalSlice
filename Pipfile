@@ -7,12 +7,13 @@ name = "pypi"
 fastapi = "*"
 uvicorn = "*"
 python-dotenv = "*"
-langchain = {extras = ["llms"] }
+langchain = "*"
 python-multipart = "*"
 chromadb = "*"
 pypdf = "*"
 requests = "*"
 motor = "*"
+pyinstaller = "*"
 
 [dev-packages]
 
