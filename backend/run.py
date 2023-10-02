@@ -1,62 +1,65 @@
 import os
 import sys
-import subprocess
+import json
+import socket
+import uvicorn
 from dotenv import load_dotenv
 from urllib.parse import urlparse
+
+# Ensure the right path is on sys.path
+if getattr(sys, 'frozen', False):
+    # we are running in a bundle
+    bundle_dir = sys._MEIPASS
+else:
+    # we are running in a normal Python environment
+    bundle_dir = os.path.dirname(os.path.abspath(__file__))
+
+sys.path.append(bundle_dir)
+
+# Now you can import your app code
+from backend.main import app
+
+def find_available_port(start_port):
+    port = start_port
+    while True:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+            result = sock.connect_ex(('localhost', port))
+            if result != 0:  # Port is available
+                return port
+            port += 1
+
+def write_port_to_config(port):
+    config_data = {"backend_port": port}
+    # Get the directory where run.exe is located
+    exe_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+    # Build the path to the .config file
+    config_path = os.path.join(exe_dir, '.config')
+    # Write the .config file
+    with open(config_path, 'w') as file:
+        json.dump(config_data, file)
 
 def run():
     # Load environment variables
     load_dotenv()
 
-    # Get the ENV variable
-    env = os.getenv("ENV")
+    # Get the environment variable
+    env = os.getenv("NODE_ENV")
 
-    # Get the BACKEND_URL variable
-    backend_url = os.getenv("BACKEND_URL")
-    if not backend_url:
-        print("Error: BACKEND_URL is not set.")
-        return
-
-    parsed_url = urlparse(backend_url)
-    host = parsed_url.hostname
-    port = parsed_url.port
-
-    if not host or not port:
-        print("Error: Invalid BACKEND_URL.")
-        return
-
-    command = []
-    print(os.getcwd())
-
-    try:
-        base_path = sys._MEIPASS  # Set by PyInstaller
-    except Exception:
-        base_path = os.path.abspath(".")
-
-    uvicorn_main = os.path.join(base_path, "main:app")
-
+    # Determine host and port based on environment
     if env == "development":
-        command = [
-            "uvicorn",
-            uvicorn_main,
-            "--host", str(host),
-            "--port", str(port),
-            "--reload"
-        ]
-    elif env == "production":
-        command = [
-            "uvicorn",
-            uvicorn_main,
-            "--host", str(host),
-            "--port", str(port)
-        ]
+        backend_url = os.getenv("BACKEND_URL")
+        parsed_url = urlparse(backend_url)
+        host = parsed_url.hostname
+        port = parsed_url.port
     else:
-        print("Error: Unknown ENV value. Set it to either 'development' or 'production'.")
-        return
+        host = '0.0.0.0'
+        port = find_available_port(int(os.getenv("DEFAULT_PORT", 8000)))
+        write_port_to_config(port)
 
-    print(f"Executing command: {command}")
-    subprocess.run(command)
+    reload = env == "development"
 
+    print(f"Executing uvicorn with host={host}, port={port}, reload={reload}")
+    uvicorn.run(app, host=host, port=port, reload=reload)
 
 if __name__ == "__main__":
     run()
