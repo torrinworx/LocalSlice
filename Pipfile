@@ -14,6 +14,8 @@ pypdf = "*"
 requests = "*"
 motor = "*"
 pyinstaller = "*"
+transformers = {git = "git+https://github.com/huggingface/transformers"}
+sentence-transformers = "*"
 
 [dev-packages]
 
