@@ -1,9 +1,3 @@
-# Build with: docker build -f Development.Dockerfile -t localslice .
-# Run with: docker run -it -p 8000:8000 -p 3000:3000 localslice
-
-### Ubuntu Setup ###
-
-# Get base image
 FROM ubuntu:22.04
 
 # Set to non interactive
