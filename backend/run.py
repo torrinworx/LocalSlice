@@ -6,18 +6,9 @@ import uvicorn
 from dotenv import load_dotenv
 from urllib.parse import urlparse
 
-# Ensure the right path is on sys.path
-if getattr(sys, 'frozen', False):
-    # we are running in a bundle
-    bundle_dir = sys._MEIPASS
-else:
-    # we are running in a normal Python environment
-    bundle_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-sys.path.append(bundle_dir)
-
-# Now you can import your app code
-from backend.main import app
+from main import app
 
 def find_available_port(start_port):
     port = start_port
@@ -51,15 +42,18 @@ def run():
         parsed_url = urlparse(backend_url)
         host = parsed_url.hostname
         port = parsed_url.port
+
+        print(f"Executing uvicorn with host={host}, port={port}, reload={True}")
+        uvicorn.run("main:app", host=host, port=port, reload=True)
+    
     else:
         host = '0.0.0.0'
         port = find_available_port(int(os.getenv("DEFAULT_PORT", 8000)))
         write_port_to_config(port)
 
-    reload = env == "development"
-
-    print(f"Executing uvicorn with host={host}, port={port}, reload={reload}")
-    uvicorn.run(app, host=host, port=port, reload=reload)
+        print(f"Executing uvicorn with host={host}, port={port}, reload={False}")
+        uvicorn.run(app, host=host, port=port, reload=False)
 
 if __name__ == "__main__":
     run()
+    
